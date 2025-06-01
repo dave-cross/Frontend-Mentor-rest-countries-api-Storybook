@@ -1,0 +1,19 @@
+.main {
+  --flow-space: var(--space-300);
+
+  @media (min-width: 500px) {
+    --flow-space: var(--space-600);
+  }
+}
+
+.main__filters {
+  --repel-space: var(--space-500);
+}
+
+.main__content {
+  --flow-space: var(--space-400);
+
+  @media (min-width: 500px) {
+    --flow-space: var(--space-600);
+  }
+}

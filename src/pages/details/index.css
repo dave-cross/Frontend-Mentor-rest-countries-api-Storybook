@@ -1,0 +1,17 @@
+.details-page {
+  --flow-space: var(--space-800);
+
+  @media (min-width: 500px) {
+    --flow-space: var(--space-1000);
+  }
+}
+
+.details-page__back {
+  --flow-space: var(--space-500);
+
+  @media (min-width: 500px) {
+    --flow-space: var(--space-1000);
+  }
+}
+
+/* .details-page__content{} */

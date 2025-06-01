@@ -1,0 +1,21 @@
+import Header from "../../components/header";
+import Details from "../../components/details";
+import BackButton from "../../components/back-button";
+
+import "./index.css";
+
+const MainPage = ({ data }) => {
+  return (
+    <div className="details-page flow">
+      <Header />
+      <div className="details-page__back center">
+        <BackButton />
+      </div>
+      <main className="details-page__content grid center">
+        <Details country={data} />
+      </main>
+    </div>
+  );
+};
+
+export default MainPage;
