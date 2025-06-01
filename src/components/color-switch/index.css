@@ -1,0 +1,18 @@
+.color-switch {
+  --cluster-space: var(--space-100);
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  color: var(--color-typography-default);
+  font: var(--typography-button-theme);
+
+  path {
+    stroke: currentColor;
+  }
+}
+
+[data-theme="dark"] .button {
+  path {
+    fill: currentColor;
+  }
+}

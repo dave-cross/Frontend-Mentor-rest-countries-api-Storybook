@@ -1,0 +1,27 @@
+.back-button-wrapper {
+  container-name: back-button;
+  container-type: inline-size;
+  text-wrap: nowrap;
+}
+
+.back-button {
+  --cluster-space: var(--space-125);
+  text-decoration: none;
+  font: var(--typography-details-button-back);
+  line-height: var(--line-height-00);
+  color: var(--color-typography-default);
+  background-color: var(--color-background-button);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-back-button);
+  padding: var(--space-125) var(--space-400);
+  padding-inline-end: var(--space-500);
+  width: max-content;
+
+  path {
+    fill: currentColor;
+  }
+}
+
+.back-button:hover {
+  color: var(--color-typography-default-hover);
+}

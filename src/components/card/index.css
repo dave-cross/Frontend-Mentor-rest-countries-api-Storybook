@@ -1,0 +1,54 @@
+.card {
+  position: relative;
+  background-color: var(--color-background-card);
+  box-shadow: var(--shadow-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.card__image {
+  block-size: 160px;
+  inline-size: 100%;
+  /* background-color: silver; */
+}
+
+.card__image img {
+  block-size: 100%;
+  inline-size: 100%;
+  /* object-fit: contain; */
+  object-fit: cover;
+  object-position: center;
+}
+
+.card__content {
+  --flow-space: var(--space-100);
+  font: var(--typography-card-body-default);
+  padding: var(--space-300);
+  padding-block-end: var(--space-575);
+}
+
+.card__content h2 {
+  font: var(--typography-card-heading);
+}
+
+.card__content h2 + * {
+  --flow-space: var(--space-200);
+}
+
+.card__content strong {
+  font: var(--typography-card-body-strong);
+}
+
+.card__content a {
+  color: inherit;
+  text-decoration: none;
+}
+.card__content a:hover {
+  color: var(--color-typography-default-hover);
+}
+
+.card__content a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}

@@ -1,0 +1,67 @@
+.region-filter {
+  position: relative;
+  font: var(--typography-input);
+  color: var(--color-typography-default);
+}
+
+.region-filter .filter-button {
+  anchor-name: --shareSheet;
+  font: inherit;
+  width: 200px;
+  cursor: pointer;
+  padding-inline: var(--space-300);
+  padding-block: var(--space-225);
+  border-radius: var(--radius-md);
+  border: 0;
+  text-align: left;
+  background-color: var(--color-background-button);
+
+  path {
+    fill: currentColor;
+  }
+
+  &:hover {
+    background-image: linear-gradient(
+      hsl(from var(--black) h s l / 0.1),
+      hsl(from var(--black) h s l / 0.1)
+    );
+  }
+}
+
+.region-filter .filter-options {
+  background-color: var(--color-background-button);
+  list-style: "";
+  padding-block: var(--space-150);
+
+  position: absolute;
+  inset: auto;
+  position-anchor: --shareSheet;
+  top: calc(anchor(bottom) + var(--space-50));
+  left: anchor(left);
+  width: anchor-size(width);
+  border-radius: var(--radius-md);
+  border: 0;
+
+  button {
+    cursor: pointer;
+    font: inherit;
+    padding-inline: var(--space-300);
+    padding-block: var(--space-50);
+    border: 0;
+    text-align: left;
+    background-color: transparent;
+    width: 100%;
+
+    path {
+      fill: currentColor;
+    }
+
+    &:hover,
+    &[data-selected="true"] {
+      background-image: linear-gradient(
+        hsl(from var(--black) h s l / 0.1),
+        hsl(from var(--black) h s l / 0.1)
+      );
+    }
+  }
+}

@@ -1,42 +1,234 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root {
+  /* Tier 1 */
+  --white: hsl(0 100% 100%);
+  --black: hsl(0 0% 0%);
+  --grey-200: hsl(0 0% 98%);
+  --grey-300: hsl(0 0% 75%);
+  --grey-400: hsl(0 0% 52%);
+  --blue-400: hsl(209 23% 50%);
+  --blue-500: hsl(209 23% 22%);
+  --blue-600: hsl(200 15% 8%);
+  --blue-700: hsl(207 26% 17%);
+
+  --font-family: "Nunito Sans", sans-serif;
+
+  --font-weight-300: 300;
+  --font-weight-400: 400;
+  --font-weight-600: 600;
+  --font-weight-800: 800;
+
+  --font-size-32: 32px;
+  --font-size-24: 24px;
+  --font-size-22: 22px;
+  --font-size-18: 18px;
+  --font-size-16: 16px;
+  --font-size-14: 14px;
+  --font-size-12: 12px;
+
+  /* @link https://utopia.fyi/clamp/calculator?a=375,900,22—32|14—16|12—14|14—24|12—16&p=font-size */
+
+  --font-size-22-32: clamp(
+    var(--font-size-22),
+    14.8571px + 1.9048vw,
+    var(--font-size-32)
+  );
+  --font-size-14-16: clamp(
+    var(--font-size-14),
+    12.5714px + 0.381vw,
+    var(--font-size-16)
+  );
+  --font-size-12-14: clamp(
+    var(--font-size-12),
+    10.5714px + 0.381vw,
+    var(--font-size-14)
+  );
+  --font-size-14-24: clamp(
+    var(--font-size-14),
+    6.8571px + 1.9048vw,
+    var(--font-size-24)
+  );
+  --font-size-12-16: clamp(
+    var(--font-size-12),
+    9.1429px + 0.7619vw,
+    var(--font-size-16)
+  );
+
+  --line-height-00: normal;
+  --line-height-16: 16px;
+  --line-height-20: 20px;
+  --line-height-24: 24px;
+  --line-height-26: 26px;
+  --line-height-32: 32px;
+
+  --space-50: 4px;
+  --space-100: 8px;
+  --space-200: 16px;
+  --space-300: 24px;
+  --space-400: 32px;
+  --space-500: 40px;
+  --space-600: 48px;
+  --space-700: 56px;
+  --space-800: 64px;
+  --space-1000: 80px;
+  --space-1400: 112px;
+  --space-1500: 120px;
+  --space-1800: 144px;
+
+  --space-75: 6px;
+  --space-125: 10px;
+  --space-150: 12px;
+  --space-225: 18px;
+  --space-550: 44px;
+  --space-575: 46px;
+  --space-850: 68px;
+  --space-925: 74px; /* 75px */
+  --space-1750: 140px;
+
+  --radius-2: 2px;
+  --radius-5: 5px;
+  --radius-10: 10px;
+
+  --shadow-1: 0 0 7px 2px hsl(from var(--black) h s l / 2.94%); /* card and card-flag */
+  --shadow-2: 0 2px 9px 0 hsl(from var(--black) h s l / 5.32%); /* input */
+  --shadow-3: 0 0 14px 4px hsl(from var(--black) h s l / 2.94%); /* big flag */
+  --shadow-4: 0 0 4px 1px hsl(from var(--black) h s l / 10.49%); /* "borders" button */
+  --shadow-5: 0 2px 4px 0 hsl(from var(--black) h s l / 5.62%); /* navbar */
+
+  --max-width: 1280px;
+
+  /* Tier 2 */
+
+  --color-background-default: light-dark(var(--grey-200), var(--blue-700));
+  --color-background-navbar: light-dark(var(--white), var(--blue-500));
+  --color-background-card: light-dark(var(--white), var(--blue-500));
+  --color-background-button: light-dark(var(--white), var(--blue-500));
+  --color-background-input: light-dark(var(--white), var(--blue-500));
+  --color-background-input-focus: light-dark(var(--blue-500), var(--white));
+
+  --color-typography-default: light-dark(var(--blue-600), var(--white));
+  --color-typography-default-hover: light-dark(
+    var(--blue-400),
+    var(--grey-300)
+  );
+  --color-typography-input: light-dark(var(--grey-400), var(--white));
+
+  --typography-appname: var(--font-weight-800) var(--font-size-14-24) /
+    var(--line-height-20) var(--font-family);
+  --typography-button-theme: var(--font-weight-600) var(--font-size-12-16) /
+    var(--line-height-00) var(--font-family);
+  --typography-input: var(--font-weight-400) var(--font-size-12-14) /
+    var(--line-height-20) var(--font-family);
+  --typography-heading: var(--font-weight-800) var(--font-size-22-32) /
+    var(--line-height-00) var(--font-family);
+  --typography-body: var(--font-weight-300) var(--font-size-14-16) /
+    var(--line-height-32) var(--font-family);
+  --typography-body-strong: var(--font-weight-600) var(--font-size-14-16) /
+    var(--line-height-32) var(--font-family);
+
+  --typography-card-heading: var(--font-weight-800) var(--font-size-18) /
+    var(--line-height-26) var(--font-family);
+  --typography-card-body-default: var(--font-weight-300) var(--font-size-14) /
+    var(--line-height-16) var(--font-family);
+  --typography-card-body-strong: var(--font-weight-600) var(--font-size-14) /
+    var(--line-height-16) var(--font-family);
+
+  --typography-details-button-back: var(--font-weight-300)
+    var(--font-size-14-16) / var(--line-height-20) var(--font-family);
+  --typography-details-button-neighbor: var(--font-weight-300)
+    var(--font-size-12-14) / var(--line-height-00) var(--font-family);
+
+  --radius-sm: var(--radius-2);
+  --radius-md: var(--radius-5);
+  --radius-lg: var(--radius-10);
+
+  --shadow-card: var(--shadow-1);
+  --shadow-back-button: var(--shadow-1);
+  --shadow-input: var(--shadow-2);
+  --shadow-flag-big: var(--shadow-3);
+  --shadow-button: var(--shadow-4);
+  --shadow-navbar: var(--shadow-5);
+
+  color-scheme: dark light;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+:root[data-theme="light"] {
+  color-scheme: only light;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+:root[data-theme="dark"] {
+  color-scheme: only dark;
 }
 
-.card {
-  padding: 2em;
+body {
+  background-color: var(--color-background-default);
+  color: var(--color-typography-default);
+  font: var(--typography-body);
+  margin-bottom: var(--space-550);
 }
 
-.read-the-docs {
-  color: #888;
+h1 {
+  font: var(--typography-heading);
+}
+
+strong {
+  font: var(--typography-body-strong);
+}
+
+picture,
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.flow > * + * {
+  margin-block-start: var(--flow-space, var(--space-300));
+}
+
+.cluster {
+  display: flex;
+  flex-direction: var(--cluster-direction, row);
+  flex-wrap: wrap;
+  gap: var(--cluster-space, var(--space-200));
+  justify-content: var(--cluster-justify, start);
+  align-items: var(--cluster-align, center);
+}
+
+.repel {
+  display: flex;
+  flex-direction: var(--repel-direction, row);
+  flex-wrap: wrap;
+  gap: var(--repel-space, var(--space-200));
+  justify-content: var(--repel-justify, space-between);
+  align-items: var(--repel-align, center);
+}
+
+.center {
+  --_center-max-size: var(--center-max-size, 1280px);
+  --_center-padding: var(--center-padding, var(--space-200));
+  margin-inline: auto;
+  max-inline-size: var(--_center-max-size);
+  padding-inline: var(--_center-padding);
+}
+
+.grid {
+  display: grid;
+  gap: var(--grid-space, var(--space-925));
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
 }

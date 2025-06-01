@@ -1,0 +1,33 @@
+.input-wrapper {
+  --cluster-space: var(--space-300);
+  padding-inline: var(--space-400);
+  padding-block: var(--space-225);
+  background-color: var(--color-background-input);
+  color: var(--color-typography-input);
+  font: var(--typography-input);
+  border-radius: var(--radius-md);
+  max-width: 480px;
+  width: 100%;
+
+  &:focus-within {
+    outline: 1px solid var(--color-background-input-focus);
+  }
+
+  path {
+    fill: currentColor;
+  }
+
+  input {
+    border: 0;
+    background-color: transparent;
+    font: inherit;
+  }
+
+  input:focus {
+    outline: 0;
+  }
+
+  input::placeholder {
+    color: var(--color-typography-input);
+  }
+}
