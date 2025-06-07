@@ -11,7 +11,7 @@ const MainPage = ({ data }) => {
       <div className="details-page__back center">
         <BackButton />
       </div>
-      <main className="details-page__content grid center">
+      <main className="details-page__content center">
         <Details country={data} />
       </main>
     </div>

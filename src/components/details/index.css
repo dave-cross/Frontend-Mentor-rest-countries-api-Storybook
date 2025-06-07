@@ -1,13 +1,17 @@
 .details {
-  --cluster-space: var(--space-550) var(--space-1800);
+  /* --sidebar-space: var(--space-550) var(--space-1500); */
+  /* Use this to push content to edge in large viewport */
+  --sidebar-space: var(--space-550) var(--space-1800);
+  --sidebar-min-size: 35%;
+  justify-content: center;
 }
 
 .details__image {
-  max-width: 560px;
+  max-width: 570px;
 }
 
 .details__content {
-  max-width: 574px;
+  max-width: 570px;
 }
 
 .details__stats {

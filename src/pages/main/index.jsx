@@ -28,10 +28,12 @@ const MainPage = ({ data }) => {
         <RegionFilter getSelected={setRegion} selected={region} />
       </div>
 
-      <main className="main__content grid center">
-        {countries.map((country) => (
-          <Card country={country} key={country.cioc} />
-        ))}
+      <main className="main__content center">
+        <div className="grid">
+          {countries.map((country) => (
+            <Card country={country} key={country.cioc} />
+          ))}
+        </div>
       </main>
     </div>
   );

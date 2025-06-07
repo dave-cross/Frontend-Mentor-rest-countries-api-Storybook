@@ -2,13 +2,15 @@
   /* Tier 1 */
   --white: hsl(0 100% 100%);
   --black: hsl(0 0% 0%);
-  --grey-200: hsl(0 0% 98%);
-  --grey-300: hsl(0 0% 75%);
-  --grey-400: hsl(0 0% 52%);
-  --blue-400: hsl(209 23% 50%);
-  --blue-500: hsl(209 23% 22%);
-  --blue-600: hsl(200 15% 8%);
-  --blue-700: hsl(207 26% 17%);
+  --grey-50: hsl(0 0% 99%);
+  --grey-250: hsl(0 0% 77%);
+  --grey-300: hsl(0 0% 70%);
+  --grey-350: hsl(0 0% 59%);
+  --grey-400: hsl(0 0% 50%);
+  --grey-950: hsl(200 15% 8%);
+  --blue-400: hsl(209 23% 50%); /* ??? */
+  --blue-900: hsl(209 23% 22%);
+  --blue-950: hsl(207 26% 17%);
 
   --font-family: "Nunito Sans", sans-serif;
 
@@ -19,39 +21,19 @@
 
   --font-size-32: 32px;
   --font-size-24: 24px;
-  --font-size-22: 22px;
+  --font-size-22: 22px; /* ??? */
   --font-size-18: 18px;
   --font-size-16: 16px;
   --font-size-14: 14px;
   --font-size-12: 12px;
 
-  /* @link https://utopia.fyi/clamp/calculator?a=375,900,22—32|14—16|12—14|14—24|12—16&p=font-size */
+  /* @link https://utopia.fyi/clamp/calculator?a=375,768,24—32|14—24|14—16|12—16|12—14&p=font-size */
 
-  --font-size-22-32: clamp(
-    var(--font-size-22),
-    14.8571px + 1.9048vw,
-    var(--font-size-32)
-  );
-  --font-size-14-16: clamp(
-    var(--font-size-14),
-    12.5714px + 0.381vw,
-    var(--font-size-16)
-  );
-  --font-size-12-14: clamp(
-    var(--font-size-12),
-    10.5714px + 0.381vw,
-    var(--font-size-14)
-  );
-  --font-size-14-24: clamp(
-    var(--font-size-14),
-    6.8571px + 1.9048vw,
-    var(--font-size-24)
-  );
-  --font-size-12-16: clamp(
-    var(--font-size-12),
-    9.1429px + 0.7619vw,
-    var(--font-size-16)
-  );
+  --font-size-24-32: clamp(1.5rem, 1.0229rem + 2.0356vw, 2rem);
+  --font-size-14-24: clamp(0.875rem, 0.2786rem + 2.5445vw, 1.5rem);
+  --font-size-14-16: clamp(0.875rem, 0.7557rem + 0.5089vw, 1rem);
+  --font-size-12-16: clamp(0.75rem, 0.5115rem + 1.0178vw, 1rem);
+  --font-size-12-14: clamp(0.75rem, 0.6307rem + 0.5089vw, 0.875rem);
 
   --line-height-00: normal;
   --line-height-16: 16px;
@@ -60,7 +42,16 @@
   --line-height-26: 26px;
   --line-height-32: 32px;
 
-  --space-50: 4px;
+  --line-height-000: normal;
+  --line-height-114: 1.14;
+  --line-height-135: 1.35;
+  --line-height-137: 1.375;
+  --line-height-145: 1.45;
+  --line-height-150: 1.5;
+  --line-height-200: 2;
+  --line-height-225: 2.25;
+
+  --space-50: 4px; /* ??? */
   --space-100: 8px;
   --space-200: 16px;
   --space-300: 24px;
@@ -69,10 +60,11 @@
   --space-600: 48px;
   --space-700: 56px;
   --space-800: 64px;
+  --space-900: 72px;
   --space-1000: 80px;
-  --space-1400: 112px;
-  --space-1500: 120px;
-  --space-1800: 144px;
+  --space-1400: 112px; /* ??? */
+  --space-1500: 120px; /* ??? */
+  --space-1800: 144px; /* ??? */
 
   --space-75: 6px;
   --space-125: 10px;
@@ -88,7 +80,7 @@
   --radius-5: 5px;
   --radius-10: 10px;
 
-  --shadow-1: 0 0 7px 2px hsl(from var(--black) h s l / 2.94%); /* card and card-flag */
+  --shadow-1: 0 0 7px 2px hsl(from var(--black) h s l / 10%); /* card and card-flag */
   --shadow-2: 0 2px 9px 0 hsl(from var(--black) h s l / 5.32%); /* input */
   --shadow-3: 0 0 14px 4px hsl(from var(--black) h s l / 2.94%); /* big flag */
   --shadow-4: 0 0 4px 1px hsl(from var(--black) h s l / 10.49%); /* "borders" button */
@@ -98,44 +90,51 @@
 
   /* Tier 2 */
 
-  --color-background-default: light-dark(var(--grey-200), var(--blue-700));
-  --color-background-navbar: light-dark(var(--white), var(--blue-500));
-  --color-background-card: light-dark(var(--white), var(--blue-500));
-  --color-background-button: light-dark(var(--white), var(--blue-500));
-  --color-background-input: light-dark(var(--white), var(--blue-500));
-  --color-background-input-focus: light-dark(var(--blue-500), var(--white));
+  --color-background-default: light-dark(var(--grey-50), var(--blue-950));
+  --color-background-navbar: light-dark(var(--white), var(--blue-900));
+  --color-background-card: light-dark(var(--white), var(--blue-900));
+  --color-background-button: light-dark(var(--white), var(--blue-900));
+  --color-background-input: light-dark(var(--white), var(--blue-900));
+  --color-background-input-focus: light-dark(var(--blue-900), var(--white));
 
-  --color-typography-default: light-dark(var(--blue-600), var(--white));
+  --color-typography-default: light-dark(var(--grey-950), var(--white));
   --color-typography-default-hover: light-dark(
     var(--blue-400),
-    var(--grey-300)
+    var(--grey-250)
   );
-  --color-typography-input: light-dark(var(--grey-400), var(--white));
+  --color-typography-input: light-dark(var(--grey-950), var(--white));
+  --color-typography-input-placeholder: light-dark(
+    var(--grey-250),
+    var(--white)
+  );
+  --color-typography-input-icon: light-dark(var(--grey-300), var(--white));
 
   --typography-appname: var(--font-weight-800) var(--font-size-14-24) /
-    var(--line-height-20) var(--font-family);
+    var(--line-height-137) var(--font-family);
   --typography-button-theme: var(--font-weight-600) var(--font-size-12-16) /
-    var(--line-height-00) var(--font-family);
+    var(--line-height-200) var(--font-family);
   --typography-input: var(--font-weight-400) var(--font-size-12-14) /
-    var(--line-height-20) var(--font-family);
-  --typography-heading: var(--font-weight-800) var(--font-size-22-32) /
-    var(--line-height-00) var(--font-family);
+    var(--line-height-145) var(--font-family);
+  --typography-heading: var(--font-weight-800) var(--font-size-24-32) /
+    var(--line-height-137) var(--font-family);
   --typography-body: var(--font-weight-300) var(--font-size-14-16) /
-    var(--line-height-32) var(--font-family);
+    var(--line-height-200) var(--font-family);
   --typography-body-strong: var(--font-weight-600) var(--font-size-14-16) /
-    var(--line-height-32) var(--font-family);
+    var(--line-height-200) var(--font-family);
 
   --typography-card-heading: var(--font-weight-800) var(--font-size-18) /
-    var(--line-height-26) var(--font-family);
+    var(--line-height-145) var(--font-family);
   --typography-card-body-default: var(--font-weight-300) var(--font-size-14) /
-    var(--line-height-16) var(--font-family);
+    var(--line-height-114) var(--font-family);
   --typography-card-body-strong: var(--font-weight-600) var(--font-size-14) /
-    var(--line-height-16) var(--font-family);
+    var(--line-height-114) var(--font-family);
 
   --typography-details-button-back: var(--font-weight-300)
-    var(--font-size-14-16) / var(--line-height-20) var(--font-family);
+    var(--font-size-14-16) / var(--line-height-200) var(--font-family);
+  --typography-details-heading-neighbor: var(--font-weight-600)
+    var(--font-size-16) / var(--line-height-150) var(--font-family);
   --typography-details-button-neighbor: var(--font-weight-300)
-    var(--font-size-12-14) / var(--line-height-00) var(--font-family);
+    var(--font-size-12-14) / var(--line-height-225) var(--font-family);
 
   --radius-sm: var(--radius-2);
   --radius-md: var(--radius-5);
@@ -169,7 +168,7 @@ body {
   background-color: var(--color-background-default);
   color: var(--color-typography-default);
   font: var(--typography-body);
-  margin-bottom: var(--space-550);
+  margin-bottom: var(--space-600);
 }
 
 h1 {
@@ -220,8 +219,9 @@ svg {
 }
 
 .center {
-  --_center-max-size: var(--center-max-size, 1280px);
+  --_center-max-size: var(--center-max-size, 1278px);
   --_center-padding: var(--center-padding, var(--space-200));
+  box-sizing: content-box;
   margin-inline: auto;
   max-inline-size: var(--_center-max-size);
   padding-inline: var(--_center-padding);
@@ -229,6 +229,23 @@ svg {
 
 .grid {
   display: grid;
-  gap: var(--grid-space, var(--space-925));
-  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  gap: var(--grid-space, var(--space-900));
+  grid-template-columns: repeat(auto-fit, var(--grid-element-width, 264px));
+  justify-content: center;
+}
+
+.sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sidebar-space, var(--space-300));
+}
+
+.sidebar > :first-child {
+  flex-grow: 1;
+}
+
+.sidebar > :last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: var(--sidebar-min-size, 50%);
 }

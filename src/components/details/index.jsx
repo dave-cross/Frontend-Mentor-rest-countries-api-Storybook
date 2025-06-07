@@ -3,7 +3,7 @@ import "./index.css";
 const Details = ({ country }) => {
   console.log(country);
   return (
-    <article className="details cluster">
+    <article className="details sidebar">
       <picture className="details__image">
         <img
           src={`https://flagcdn.com/${country.cca2.toLowerCase()}.svg`}
