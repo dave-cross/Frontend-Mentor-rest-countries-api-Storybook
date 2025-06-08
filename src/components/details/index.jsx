@@ -18,20 +18,24 @@ const Details = ({ country }) => {
               <strong>Population</strong>:{" "}
               {country.population.toLocaleString("en-US")} <br />
               <strong>Region</strong>: {country.region} <br />
-              <strong>Sub Region</strong>: {country.subregion} <br />
-              <strong>Capital</strong>: {country.capital}
+              <strong>Sub Region</strong>: {country.subregion ?? "n/a"} <br />
+              <strong>Capital</strong>: {country.capital ?? "none"}
             </p>
           </div>
           <div>
             <p>
               <strong>Top Level Domain</strong>: {country.tld.join(", ")} <br />
               <strong>Currencies</strong>:{" "}
-              {Object.values(country.currencies)
-                .map((cur) => cur.name)
-                .join(", ")}{" "}
+              {country.currencies
+                ? Object.values(country.currencies)
+                    .map((cur) => cur.name)
+                    .join(", ")
+                : "none"}{" "}
               <br />
               <strong>Languages</strong>:{" "}
-              {Object.values(country.languages).join(", ")}
+              {country.languages
+                ? Object.values(country.languages).join(", ")
+                : "none"}
             </p>
           </div>
         </div>
@@ -44,7 +48,7 @@ const Details = ({ country }) => {
                   <a href={border.cca2.toLowerCase()}> {border.name.common} </a>
                 </>
               ))
-            : "None"}
+            : "none"}
         </div>
       </div>
     </article>

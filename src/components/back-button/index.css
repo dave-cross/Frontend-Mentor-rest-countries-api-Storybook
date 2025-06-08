@@ -13,7 +13,7 @@
   background-color: var(--color-background-button);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-back-button);
-  padding: var(--space-125) var(--space-400);
+  padding: var(--space-150) var(--space-400);
   padding-inline-end: var(--space-500);
   width: max-content;
 
