@@ -2,7 +2,6 @@ import "./index.css";
 const Search = ({ onChange }) => {
   const handleChange = (event) => {
     const value = event.currentTarget.value;
-    console.log(value);
     if (onChange) {
       onChange(value);
     }

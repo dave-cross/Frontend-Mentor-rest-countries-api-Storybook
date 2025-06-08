@@ -1,7 +1,6 @@
 import "./index.css";
 
 const Card = ({ country }) => {
-  console.log(country);
   return (
     <article className="card">
       <picture className="card__image">

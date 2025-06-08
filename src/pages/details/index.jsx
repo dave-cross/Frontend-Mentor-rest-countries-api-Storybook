@@ -8,10 +8,10 @@ const MainPage = ({ data }) => {
   return (
     <div className="details-page flow">
       <Header />
-      <div className="details-page__back center">
+      <div className="details-page__back center" data-responsive="1278-570">
         <BackButton />
       </div>
-      <main className="details-page__content center">
+      <main className="details-page__content center" data-responsive="1278-570">
         <Details country={data} />
       </main>
     </div>

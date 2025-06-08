@@ -6,6 +6,7 @@
   color: var(--color-typography-input);
   font: var(--typography-input);
   border-radius: var(--radius-md);
+  box-shadow: var(--shadow-input);
   max-width: 480px;
   width: 100%;
 
@@ -26,6 +27,7 @@
     background-color: transparent;
     font: inherit;
     color: var(--color-typography-input);
+    flex-grow: 1;
   }
 
   input:focus {

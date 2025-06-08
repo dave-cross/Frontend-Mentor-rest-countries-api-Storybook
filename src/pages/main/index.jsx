@@ -31,7 +31,7 @@ const MainPage = ({ data }) => {
       <main className="main__content center">
         <div className="grid">
           {countries.map((country) => (
-            <Card country={country} key={country.cioc} />
+            <Card country={country} key={country.cca3} />
           ))}
         </div>
       </main>

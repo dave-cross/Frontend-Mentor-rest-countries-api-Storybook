@@ -15,7 +15,6 @@ const RegionFilter = ({ getSelected, selected }) => {
     if (content === "America") {
       content = content + "s";
     }
-    console.log(content);
     if (getSelected) {
       getSelected(content);
     }

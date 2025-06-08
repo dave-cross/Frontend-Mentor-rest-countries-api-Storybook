@@ -219,12 +219,20 @@ svg {
 }
 
 .center {
-  --_center-max-size: var(--center-max-size, 1278px);
+  --_center-max-size: var(--center-max-size, 1280px);
   --_center-padding: var(--center-padding, var(--space-200));
   box-sizing: content-box;
   margin-inline: auto;
   max-inline-size: var(--_center-max-size);
   padding-inline: var(--_center-padding);
+}
+
+.center[data-responsive="1278-570"] {
+  --center-max-size: 570px;
+
+  @media (min-width: 950px) {
+    --center-max-size: 1278px;
+  }
 }
 
 .grid {
