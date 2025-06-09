@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "../../components/header";
 import Search from "../../components/search";
 import RegionFilter from "../../components/region-filter";
@@ -9,17 +9,36 @@ import "./index.css";
 const MainPage = ({ data }) => {
   const [region, setRegion] = useState(null);
   const [search, setSearch] = useState("");
-  const countries = data.filter((country) => {
-    let isInSearch = true;
-    let isInFilter = true;
-    if (search !== "") {
-      isInSearch = country.name.common.toLowerCase().includes(search);
-    }
-    if (region) {
-      isInFilter = country.region === region;
-    }
-    return isInFilter && isInSearch;
-  });
+
+  useEffect(() => {
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach((card) => {
+      card.removeAttribute("hidden");
+
+      if (
+        search !== "" &&
+        !card.dataset.name.toLowerCase().includes(search.toLowerCase())
+      ) {
+        card.setAttribute("hidden", "true");
+      }
+      if (region && card.dataset.region !== region) {
+        card.setAttribute("hidden", "true");
+      }
+    });
+  }, [search, region]);
+
+  // const countries = data.filter((country) => {
+  //   let isInSearch = true;
+  //   let isInFilter = true;
+  //   if (search !== "") {
+  //     isInSearch = country.name.common.toLowerCase().includes(search);
+  //   }
+  //   if (region) {
+  //     isInFilter = country.region === region;
+  //   }
+  //   return isInFilter && isInSearch;
+  // });
   return (
     <div className="main flow">
       <Header />
@@ -30,7 +49,7 @@ const MainPage = ({ data }) => {
 
       <main className="main__content center">
         <div className="grid">
-          {countries.map((country) => (
+          {data.map((country) => (
             <Card country={country} key={country.cca3} />
           ))}
         </div>

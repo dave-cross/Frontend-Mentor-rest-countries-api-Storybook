@@ -2,7 +2,11 @@ import "./index.css";
 
 const Card = ({ country }) => {
   return (
-    <article className="card">
+    <article
+      className="card"
+      data-name={country.name.common}
+      data-region={country.region}
+    >
       <picture className="card__image">
         {/* <img src={country.flags.svg} alt={country.flags.alt} /> */}
         <img
