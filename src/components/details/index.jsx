@@ -1,3 +1,4 @@
+import React from "react";
 import "./index.css";
 
 const Details = ({ country }) => {
@@ -44,9 +45,9 @@ const Details = ({ country }) => {
           <strong>Border Countries:</strong>{" "}
           {country.borders
             ? country.borders.map((border) => (
-                <>
+                <React.Fragment key={border.cca2}>
                   <a href={border.cca2.toLowerCase()}> {border.name.common} </a>
-                </>
+                </React.Fragment>
               ))
             : "none"}
         </div>
